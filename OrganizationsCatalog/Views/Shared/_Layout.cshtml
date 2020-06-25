@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - OrganizationDirectory</title>
+    <link rel="shortcut icon" href="~/images/icons8-meeting-room-100.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center py-4" @*style="background-image: url(images/bg_1.jpg);"*@>
+                @*<img src="~/images/bg_1.jpg">*@
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(images/logo.jpg);"></div>
+                    <img src="~/images/logo.jpg" class="img" />
+                    <h3>Catriona Henderson</h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a asp-controller="Manage" asp-action="Person"><i class="fa fa-home mr-3"></i> Home</a>
+                </li>
+                <li>
+                    <a asp-controller="Manage" asp-action="Organinzation"><i class="fa fa-sitemap mr-3"></i> Organizations</a>
+                </li>
+                <li>
+                    <a asp-controller="Manage" asp-action="Person"><i class="fa fa-users mr-3"></i> People</a>
+                </li>
+                <li>
+                    <a asp-controller="Manage" asp-action="Create" asp-route-optionName="person"><i class="fa fa-plus mr-3"></i> Add new Person</a>
+                </li>
+                <li>
+                    <a asp-controller="Manage" asp-action="Create" asp-route-optionName="organization"><i class="fa fa-plus mr-3"></i> Add new Organization</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-support mr-3"></i> Support</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sign-out mr-3"></i> Sign Out</a>
+                </li>
+            </ul>
+
+        </nav>
+
+
+        <div class="container">
+            <!-- Page Content  -->
+            @RenderBody();
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/popper.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
